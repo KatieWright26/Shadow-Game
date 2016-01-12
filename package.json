@@ -1,0 +1,30 @@
+{
+  "name": "personal-project",
+  "version": "1.0.0",
+  "description": "Personal Project Plan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KatieWright26/personal-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KatieWright26/personal-project/issues"
+  },
+  "homepage": "https://github.com/KatieWright26/personal-project#readme",
+  "jspm": {
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  },
+  "dependencies": {
+    "jspm": "^0.16.22"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,12 @@
+.board {
+  width: 1000px;
+  height: 250px;
+  background-color: red;
+  margin: auto;
+  vertical-align: middle;
+}
+/*
+button {
+  position: absolute;
+}
+*/
