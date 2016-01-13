@@ -1,5 +1,3 @@
-Personal Project Plan
-
 Learning Objectives
 
 - Learn how to use MVC
@@ -28,4 +26,4 @@ Milestones
 Have an element in the browser that responds to arrow keys left, up, and right.
 Use Parallax Scrolling
 Have a player/enemy interactions of some kind.
-
+Functioning help/start buttons
