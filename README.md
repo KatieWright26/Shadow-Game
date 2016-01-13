@@ -12,11 +12,12 @@ What do you want to get better at?
 
 Description
 
-Side scroller advenure game.
+Side-scroller adventure game.
 
-UI: Expects that arrow buttons will function as navigation.
-    Expects that gravity will be present in game universe.
-    Expects colison detection
+UI:
+- Expects that arrow buttons will function as navigation.
+- Expects that gravity will be present in game universe.
+- Expects collision detection
 
 Technologies
 

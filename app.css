@@ -1,12 +1,20 @@
-.board {
+.boardWindow {
   width: 1000px;
   height: 250px;
-  background-color: red;
-  margin: auto;
+  border: 2px solid black;
+  margin: 70px 187px 0px 187px;
   vertical-align: middle;
+  position: relative;
 }
-/*
-button {
+
+.navigation {
+  width: 90px;
+  padding-top: 20px;
+  margin-left: 185px;
+}
+
+.player {
   position: absolute;
+  bottom:0;
+  left:0;
 }
-*/

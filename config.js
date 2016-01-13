@@ -12,11 +12,28 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+  bundles: {
+    "build.js": [
+      "app/boot.js",
+      "app/router.js",
+      "npm:babel-runtime@5.8.34/helpers/class-call-check",
+      "npm:babel-runtime@5.8.34/helpers/create-class",
+      "npm:jquery@2.2.0",
+      "app/controller.js",
+      "npm:babel-runtime@5.8.34/core-js/object/define-property",
+      "app/playerModel.js",
+      "app/view.js",
+      "npm:jquery@2.2.0/dist/jquery",
+      "npm:core-js@1.2.6/library/fn/object/define-property",
+      "npm:core-js@1.2.6/library/modules/$"
+    ]
+  },
 
   map: {
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "core-js": "npm:core-js@1.2.6",
+    "jquery": "npm:jquery@2.2.0",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
