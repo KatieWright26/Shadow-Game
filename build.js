@@ -6026,36 +6026,46 @@ define("npm:jquery@2.2.0", ["npm:jquery@2.2.0/dist/jquery"], function(main) {
 
 _removeDefine();
 })();
-System.register("app/playerModel.js", ["npm:babel-runtime@5.8.34/helpers/create-class", "npm:babel-runtime@5.8.34/helpers/class-call-check"], function (_export) {
+System.register('app/playerModel.js', ['npm:babel-runtime@5.8.34/helpers/create-class', 'npm:babel-runtime@5.8.34/helpers/class-call-check'], function (_export) {
   var _createClass, _classCallCheck, playerModel;
 
   return {
     setters: [function (_npmBabelRuntime5834HelpersCreateClass) {
-      _createClass = _npmBabelRuntime5834HelpersCreateClass["default"];
+      _createClass = _npmBabelRuntime5834HelpersCreateClass['default'];
     }, function (_npmBabelRuntime5834HelpersClassCallCheck) {
-      _classCallCheck = _npmBabelRuntime5834HelpersClassCallCheck["default"];
+      _classCallCheck = _npmBabelRuntime5834HelpersClassCallCheck['default'];
     }],
     execute: function () {
-      "use strict";
+      'use strict';
 
       playerModel = (function () {
         function playerModel() {
           _classCallCheck(this, playerModel);
 
           this.positionX = 0;
+          this.positionY = 0;
         }
 
         _createClass(playerModel, [{
-          key: "move",
+          key: 'move',
           value: function move(direction) {
-            this.positionX += 1;
+            console.log('direction is', direction);
+            if (direction === 'right') {
+              this.positionX += 1;
+            } else if (direction === 'left') {
+              this.positionX -= 1;
+            } else if (direction === 'up') {
+              this.positionY += 1;
+            } else if (direction === 'down') {
+              this.positionY -= 1;
+            }
           }
         }]);
 
         return playerModel;
       })();
 
-      _export("playerModel", playerModel);
+      _export('playerModel', playerModel);
     }
   };
 });
@@ -6175,6 +6185,8 @@ System.register('app/view.js', ['npm:babel-runtime@5.8.34/helpers/create-class',
           key: 'render',
           value: function render(playerModel) {
             console.log('data from model is: ' + playerModel.positionX);
+            $('.player').css('left', playerModel.positionX + '%');
+            $('.player').css('bottom', playerModel.positionY + '%');
           }
         }]);
 
@@ -6254,7 +6266,6 @@ System.register('app/router.js', ['npm:babel-runtime@5.8.34/helpers/create-class
             var that = this;
             console.log("listening in the router");
             $(function () {
-              console.log("katie");
               $('body').keydown(function (event) {
                 console.log(event.keyCode);
                 var up = 38;
@@ -6268,44 +6279,19 @@ System.register('app/router.js', ['npm:babel-runtime@5.8.34/helpers/create-class
                     break;
 
                   case down:
-                    moveDown = true;
+                    that.controller.move('down');
                     break;
 
                   case left:
-                    moveLeft = true;
+                    that.controller.move('left');
                     break;
 
                   case right:
-                    moveRight = true;
+                    that.controller.move('right');
                     break;
                 }
               });
             });
-
-            //   $(() => {
-            //     $('.player').addEventListener('keyup', function(event){
-            //       switch(event.keyCode)
-            //       {
-            //         case up:
-            //         moveUp = false
-            //         break;
-
-            //         case down:
-            //         moveDown = false
-            //         break;
-
-            //         case left:
-            //         moveLeft = false
-            //         break;
-
-            //         case right:
-            //         moveRight = false
-            //         break;
-            //       }
-            //     },
-            //     false)
-            //   })
-            // }
           }
         }]);
 

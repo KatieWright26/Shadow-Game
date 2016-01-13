@@ -24,43 +24,18 @@ export class Router {
           break;
 
           case down:
-          moveDown = true
+          that.controller.move('down')
           break;
 
           case left:
-          moveLeft = true
+          that.controller.move('left')
           break;
 
           case right:
-          moveRight = true
+          that.controller.move('right')
           break;
         }
       })
     })
-
-  //   $(() => {
-  //     $('.player').addEventListener('keyup', function(event){
-  //       switch(event.keyCode)
-  //       {
-  //         case up:
-  //         moveUp = false
-  //         break;
-
-  //         case down:
-  //         moveDown = false
-  //         break;
-
-  //         case left:
-  //         moveLeft = false
-  //         break;
-
-  //         case right:
-  //         moveRight = false
-  //         break;
-  //       }
-  //     },
-  //     false)
-  //   })
-  // }
-}
+  }
 }
