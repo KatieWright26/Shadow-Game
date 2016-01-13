@@ -6186,7 +6186,7 @@ System.register('app/view.js', ['npm:babel-runtime@5.8.34/helpers/create-class',
           value: function render(playerModel) {
             console.log('data from model is: ' + playerModel.positionX);
             $('.player').css('left', playerModel.positionX + '%');
-            $('.player').css('bottom', playerModel.positionY + '%');
+            $('.player').css('bottom', playerModel.positionY + '%' + '40%');
           }
         }]);
 

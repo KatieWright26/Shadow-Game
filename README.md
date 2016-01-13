@@ -21,8 +21,11 @@ UI:
 
 Technologies
 
-What technologies are you going to play with
+JQuery, libraries that take care of physics of game (gravity, collision detection ect)
 
 Milestones
 
-Day 1: Have an element in the browser that responds to arrow keys left, up, and right.
+Have an element in the browser that responds to arrow keys left, up, and right.
+Use Parallax Scrolling
+Have a player/enemy interactions of some kind.
+
