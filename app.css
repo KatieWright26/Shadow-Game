@@ -1,4 +1,4 @@
-.boardWindow {
+.viewWindow {
   width: 1000px;
   height: 250px;
   margin: 70px 187px 0px 187px;
@@ -9,7 +9,7 @@
 .trees {
   width: 1000px;
   height: 250px;
-  background-image: url('./images/background-2.png');
+  background-image: url('./images/background-2.png'); /*entire first layer to go here: ground, immediate background ct*/;
   background-position: center center;
   position: absolute;
   left: 195px;
@@ -20,7 +20,7 @@
 .background {
   width: 1000px;
   height: 250px;
-  background-image: url('./images/background-3.png');
+  background-image: url('./images/background-3.png');/*Sky bCKGROUND. Parallax scrolling */
   background-position: center center;
   position: absolute;
   left: 195px;
