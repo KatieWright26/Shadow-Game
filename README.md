@@ -23,10 +23,8 @@ JQuery, libraries that take care of physics of game (gravity, collision detectio
 
 Milestones
 
-Have an element in the browser that responds to arrow keys left, up, and right.✓
-CHECK MARK
-Unicode: U+2713, UTF-8: E2 9C 93
-Player cannot move outside of board boundry.✓
-Use Parallax Scrolling
-Have a player/enemy interactions of some kind.
-Functioning help/start buttons
+Have an element in the browser that responds to arrow keys left, up, and right.✓  return
+Player cannot move outside of board boundry.✓  return
+Use Parallax Scrolling<br>
+Have a player/enemy interactions of some kind.<br>
+Functioning help/start buttons<br>
