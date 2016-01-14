@@ -1,5 +1,6 @@
 export class mapModel {
-constructor() {
-
-}
+  constructor() {
+    this.height = 250
+    this.width = 3000
+  }
 }

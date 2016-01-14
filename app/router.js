@@ -11,7 +11,6 @@ export class Router {
     console.log("listening in the router")
     $(() => {
       $('body').keydown((event) => {
-        console.log(event.keyCode)
         var up = 38
         var left = 37
         var right = 39

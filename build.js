@@ -6029,6 +6029,25 @@ _removeDefine();
 System.register('app/playerModel.js', ['npm:babel-runtime@5.8.34/helpers/create-class', 'npm:babel-runtime@5.8.34/helpers/class-call-check'], function (_export) {
   var _createClass, _classCallCheck, playerModel;
 
+  function playerNotAtRightEdge(player) {
+    console.log(player);
+    return player.positionX !== 94;
+  }
+
+  function playerNotAtLeftEdge(player) {
+    console.log(player);
+    return player.positionX !== 0;
+  }
+
+  function playerNotAtTopEdge(player) {
+    console.log(player);
+    return player.positionY !== 57;
+  }
+
+  function playerNotAtBottomEdge(player) {
+    console.log(player);
+    return player.positionY !== 0;
+  }
   return {
     setters: [function (_npmBabelRuntime5834HelpersCreateClass) {
       _createClass = _npmBabelRuntime5834HelpersCreateClass['default'];
@@ -6050,13 +6069,15 @@ System.register('app/playerModel.js', ['npm:babel-runtime@5.8.34/helpers/create-
           key: 'move',
           value: function move(direction) {
             console.log('direction is', direction);
-            if (direction === 'right') {
+            console.log(this.positionX);
+            console.log(this.positionY);
+            if (direction === 'right' && playerNotAtRightEdge(this)) {
               this.positionX += 1;
-            } else if (direction === 'left') {
+            } else if (direction === 'left' && playerNotAtLeftEdge(this)) {
               this.positionX -= 1;
-            } else if (direction === 'up') {
+            } else if (direction === 'up' && playerNotAtTopEdge(this)) {
               this.positionY += 1;
-            } else if (direction === 'down') {
+            } else if (direction === 'down' && playerNotAtBottomEdge(this)) {
               this.positionY -= 1;
             }
           }
@@ -6186,7 +6207,7 @@ System.register('app/view.js', ['npm:babel-runtime@5.8.34/helpers/create-class',
           value: function render(playerModel) {
             console.log('data from model is: ' + playerModel.positionX);
             $('.player').css('left', playerModel.positionX + '%');
-            $('.player').css('bottom', playerModel.positionY + '%' + '40%');
+            $('.player').css('bottom', playerModel.positionY + '%');
           }
         }]);
 
@@ -6267,7 +6288,6 @@ System.register('app/router.js', ['npm:babel-runtime@5.8.34/helpers/create-class
             console.log("listening in the router");
             $(function () {
               $('body').keydown(function (event) {
-                console.log(event.keyCode);
                 var up = 38;
                 var left = 37;
                 var right = 39;
