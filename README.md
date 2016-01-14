@@ -23,8 +23,8 @@ JQuery, libraries that take care of physics of game (gravity, collision detectio
 
 Milestones
 
-Have an element in the browser that responds to arrow keys left, up, and right.✓  return
-Player cannot move outside of board boundry.✓  return
+Have an element in the browser that responds to arrow keys left, up, and right✓<br>
+Player cannot move outside of board boundry✓<br>
 Use Parallax Scrolling<br>
 Have a player/enemy interactions of some kind.<br>
 Functioning help/start buttons<br>

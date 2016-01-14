@@ -1,7 +1,7 @@
 export class playerModel {
   constructor() {
     this.positionX = 0
-    this.positionY = 0
+    this.positionY = 9
   }
   move(direction) {
      console.log('direction is', direction)
@@ -37,5 +37,5 @@ function playerNotAtTopEdge(player) {
 
 function playerNotAtBottomEdge(player) {
   console.log(player)
-  return player.positionY !== 0
+  return player.positionY !== 9
 }

@@ -1,10 +1,31 @@
 .boardWindow {
   width: 1000px;
   height: 250px;
-  border: 2px solid black;
   margin: 70px 187px 0px 187px;
   vertical-align: middle;
   position: relative;
+}
+
+.trees {
+  width: 1000px;
+  height: 250px;
+  background-image: url('./images/background-2.png');
+  background-position: center center;
+  position: absolute;
+  left: 195px;
+  top: 70px;
+  z-index: -1;
+}
+
+.background {
+  width: 1000px;
+  height: 250px;
+  background-image: url('./images/background-3.png');
+  background-position: center center;
+  position: absolute;
+  left: 195px;
+  top: 70px;
+  z-index: -2;
 }
 
 .navigation {
