@@ -20,8 +20,10 @@ System.config({
       "app/controller.js",
       "npm:babel-runtime@5.8.34/helpers/class-call-check",
       "npm:babel-runtime@5.8.34/helpers/create-class",
+
       "app/playerModel.js",
       "app/view.js",
+      "app/cameraModel.js",
       "npm:jquery@2.2.0/dist/jquery",
       "npm:babel-runtime@5.8.34/core-js/object/define-property",
       "npm:core-js@1.2.6/library/fn/object/define-property",
