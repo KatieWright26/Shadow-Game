@@ -4,7 +4,7 @@ export class playerModel {
     this.positionY = 0
   }
   move(direction) {
-   
+
     if((direction === 'right') && playerNotAtRightEdge(this)){
       this.positionX += 1
     }
@@ -19,7 +19,7 @@ export class playerModel {
 }
 
 function playerNotAtRightEdge(player) {
-  return player.positionX !== 94
+  return player.positionX !== 147
 }
 
 function playerNotAtLeftEdge(player) {
@@ -27,9 +27,9 @@ function playerNotAtLeftEdge(player) {
 }
 
 function playerNotAtTopEdge(player) {
-  return player.positionY !== 57
+  return player.positionY <= 57
 }
 
 function playerNotAtBottomEdge(player) {
-  return player.positionY !== 9
+  return player.positionY >= 0
 }

@@ -6,20 +6,21 @@
   position: relative;
 }
 
-.trees {
-  background-image: url('./images/background-2.png'); /*entire first layer to go here: ground, immediate background ct*/;
+/*.trees {
+  background-image: url('./images/background-2.png'); entire first layer to go here: ground, immediate background ct;
   background-position: center center;
   position: absolute;
   left: 195px;
   top: 70px;
   z-index: -1;
-}
+}*/
 
 .background {
   width: 1000px;
   height: 250px;
-  background-image: url('./images/background-3.png');/*Sky bCKGROUND. Parallax scrolling */
-  background-position: center center;
+  background-image: url('./images/background-2.png');/*Sky bCKGROUND. Parallax scrolling */
+  background-attachment: fixed;
+  background-position: 0% 0%;
   position: absolute;
   left: 195px;
   top: 70px;
