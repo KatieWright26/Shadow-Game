@@ -6046,7 +6046,7 @@ System.register('app/playerModel.js', ['npm:babel-runtime@5.8.34/helpers/create-
 
   function playerNotAtBottomEdge(player) {
     console.log(player);
-    return player.positionY !== 0;
+    return player.positionY !== 9;
   }
   return {
     setters: [function (_npmBabelRuntime5834HelpersCreateClass) {
@@ -6062,7 +6062,7 @@ System.register('app/playerModel.js', ['npm:babel-runtime@5.8.34/helpers/create-
           _classCallCheck(this, playerModel);
 
           this.positionX = 0;
-          this.positionY = 0;
+          this.positionY = 9;
         }
 
         _createClass(playerModel, [{
