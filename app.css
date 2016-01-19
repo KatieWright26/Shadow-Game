@@ -7,8 +7,6 @@
 }
 
 .trees {
-  width: 1000px;
-  height: 250px;
   background-image: url('./images/background-2.png'); /*entire first layer to go here: ground, immediate background ct*/;
   background-position: center center;
   position: absolute;

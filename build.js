@@ -6026,28 +6026,9 @@ define("npm:jquery@2.2.0", ["npm:jquery@2.2.0/dist/jquery"], function(main) {
 
 _removeDefine();
 })();
-System.register('app/playerModel.js', ['npm:babel-runtime@5.8.34/helpers/create-class', 'npm:babel-runtime@5.8.34/helpers/class-call-check'], function (_export) {
-  var _createClass, _classCallCheck, playerModel;
+System.register('app/view.js', ['npm:babel-runtime@5.8.34/helpers/create-class', 'npm:babel-runtime@5.8.34/helpers/class-call-check'], function (_export) {
+  var _createClass, _classCallCheck, View;
 
-  function playerNotAtRightEdge(player) {
-    console.log(player);
-    return player.positionX !== 94;
-  }
-
-  function playerNotAtLeftEdge(player) {
-    console.log(player);
-    return player.positionX !== 0;
-  }
-
-  function playerNotAtTopEdge(player) {
-    console.log(player);
-    return player.positionY !== 57;
-  }
-
-  function playerNotAtBottomEdge(player) {
-    console.log(player);
-    return player.positionY !== 0;
-  }
   return {
     setters: [function (_npmBabelRuntime5834HelpersCreateClass) {
       _createClass = _npmBabelRuntime5834HelpersCreateClass['default'];
@@ -6057,36 +6038,23 @@ System.register('app/playerModel.js', ['npm:babel-runtime@5.8.34/helpers/create-
     execute: function () {
       'use strict';
 
-      playerModel = (function () {
-        function playerModel() {
-          _classCallCheck(this, playerModel);
-
-          this.positionX = 0;
-          this.positionY = 0;
+      View = (function () {
+        function View() {
+          _classCallCheck(this, View);
         }
 
-        _createClass(playerModel, [{
-          key: 'move',
-          value: function move(direction) {
-            console.log('direction is', direction);
-            console.log(this.positionX);
-            console.log(this.positionY);
-            if (direction === 'right' && playerNotAtRightEdge(this)) {
-              this.positionX += 1;
-            } else if (direction === 'left' && playerNotAtLeftEdge(this)) {
-              this.positionX -= 1;
-            } else if (direction === 'up' && playerNotAtTopEdge(this)) {
-              this.positionY += 1;
-            } else if (direction === 'down' && playerNotAtBottomEdge(this)) {
-              this.positionY -= 1;
-            }
+        _createClass(View, [{
+          key: 'render',
+          value: function render(playerModel) {
+            $('.player').css('left', playerModel.positionX + '%');
+            $('.player').css('bottom', playerModel.positionY + '%');
           }
         }]);
 
-        return playerModel;
+        return View;
       })();
 
-      _export('playerModel', playerModel);
+      _export('View', View);
     }
   };
 });
@@ -6185,9 +6153,24 @@ System.registerDynamic("npm:babel-runtime@5.8.34/helpers/class-call-check", [], 
   return module.exports;
 });
 
-System.register('app/view.js', ['npm:babel-runtime@5.8.34/helpers/create-class', 'npm:babel-runtime@5.8.34/helpers/class-call-check'], function (_export) {
-  var _createClass, _classCallCheck, View;
+System.register('app/playerModel.js', ['npm:babel-runtime@5.8.34/helpers/create-class', 'npm:babel-runtime@5.8.34/helpers/class-call-check'], function (_export) {
+  var _createClass, _classCallCheck, playerModel;
 
+  function playerNotAtRightEdge(player) {
+    return player.positionX !== 94;
+  }
+
+  function playerNotAtLeftEdge(player) {
+    return player.positionX !== 0;
+  }
+
+  function playerNotAtTopEdge(player) {
+    return player.positionY !== 57;
+  }
+
+  function playerNotAtBottomEdge(player) {
+    return player.positionY !== 9;
+  }
   return {
     setters: [function (_npmBabelRuntime5834HelpersCreateClass) {
       _createClass = _npmBabelRuntime5834HelpersCreateClass['default'];
@@ -6197,29 +6180,62 @@ System.register('app/view.js', ['npm:babel-runtime@5.8.34/helpers/create-class',
     execute: function () {
       'use strict';
 
-      View = (function () {
-        function View() {
-          _classCallCheck(this, View);
+      playerModel = (function () {
+        function playerModel() {
+          _classCallCheck(this, playerModel);
+
+          this.positionX = 0;
+          this.positionY = 0;
         }
 
-        _createClass(View, [{
-          key: 'render',
-          value: function render(playerModel) {
-            console.log('data from model is: ' + playerModel.positionX);
-            $('.player').css('left', playerModel.positionX + '%');
-            $('.player').css('bottom', playerModel.positionY + '%');
+        _createClass(playerModel, [{
+          key: 'move',
+          value: function move(direction) {
+
+            if (direction === 'right' && playerNotAtRightEdge(this)) {
+              this.positionX += 1;
+            } else if (direction === 'left' && playerNotAtLeftEdge(this)) {
+              this.positionX -= 1;
+            } else if (direction === 'up' && playerNotAtTopEdge(this)) {
+              this.positionY += 1;
+            } else if (direction === 'down' && playerNotAtBottomEdge(this)) {
+              this.positionY -= 1;
+            }
           }
         }]);
 
-        return View;
+        return playerModel;
       })();
 
-      _export('View', View);
+      _export('playerModel', playerModel);
     }
   };
 });
-System.register('app/controller.js', ['npm:babel-runtime@5.8.34/helpers/create-class', 'npm:babel-runtime@5.8.34/helpers/class-call-check', 'app/playerModel.js', 'app/view.js'], function (_export) {
-  var _createClass, _classCallCheck, playerModel, View, Controller;
+System.register('app/cameraModel.js', ['npm:babel-runtime@5.8.34/helpers/class-call-check', 'app/playerModel.js'], function (_export) {
+	var _classCallCheck, playerModel, cameraModel;
+
+	return {
+		setters: [function (_npmBabelRuntime5834HelpersClassCallCheck) {
+			_classCallCheck = _npmBabelRuntime5834HelpersClassCallCheck['default'];
+		}, function (_appPlayerModelJs) {
+			playerModel = _appPlayerModelJs['default'];
+		}],
+		execute: function () {
+			'use strict';
+
+			cameraModel = function cameraModel() {
+				_classCallCheck(this, cameraModel);
+
+				this.positionX = 0, this.positionY = 0, this.cameraLocation = this.playerModel;
+				console.log(this.cameraLocation);
+			};
+
+			_export('cameraModel', cameraModel);
+		}
+	};
+});
+System.register('app/controller.js', ['npm:babel-runtime@5.8.34/helpers/create-class', 'npm:babel-runtime@5.8.34/helpers/class-call-check', 'app/playerModel.js', 'app/view.js', 'app/cameraModel.js'], function (_export) {
+  var _createClass, _classCallCheck, playerModel, View, cameraModel, Controller;
 
   return {
     setters: [function (_npmBabelRuntime5834HelpersCreateClass) {
@@ -6230,6 +6246,8 @@ System.register('app/controller.js', ['npm:babel-runtime@5.8.34/helpers/create-c
       playerModel = _appPlayerModelJs.playerModel;
     }, function (_appViewJs) {
       View = _appViewJs.View;
+    }, function (_appCameraModelJs) {
+      cameraModel = _appCameraModelJs.cameraModel;
     }],
     execute: function () {
       'use strict';
@@ -6240,12 +6258,12 @@ System.register('app/controller.js', ['npm:babel-runtime@5.8.34/helpers/create-c
 
           this.playerModel = new playerModel();
           this.view = new View();
+          this.cameraModel = new cameraModel(this.playerModel);
         }
 
         _createClass(Controller, [{
           key: 'move',
           value: function move(direction) {
-            console.log("controller moving: " + direction);
             this.playerModel.move(direction);
             this.view.render(this.playerModel);
           }
