@@ -7,7 +7,7 @@ export class View {
           $('.player').css('left', x +'%')
     }
       else {
-          $('.background').css('background-position',`-${playerModel.positionX - 46}% ${playerModel.positionY}%`)
+          $('.background').css('background-position',`${playerModel.positionX - 46}% ${playerModel.positionY}%`)
     }
   }
 }
