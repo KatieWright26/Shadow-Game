@@ -5,8 +5,8 @@ export class playerModel {
     this.positionY = 0
     this.velocityX = 0
     this.velocityY = 0
-    this.jumpAcceleration = 10
-    this.gravity = - 1
+    this.jumpAcceleration = 13
+    this.gravity = - 5
     setInterval(updatePhysics,100, this)
   }
 
@@ -26,15 +26,12 @@ export class playerModel {
 }
 
 function jump(player) {
-  console.log("P-X:",player.positionX)
   player.velocityY += player.jumpAcceleration
-  console.log(player.positionY)
 }
 
 function updatePhysics(player) {
   player.positionY += player.velocityY
   player.positionX += player.velocityX
-  console.log(player)
   applyGravity(player)
 }
 
