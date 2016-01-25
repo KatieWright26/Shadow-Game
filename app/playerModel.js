@@ -7,22 +7,23 @@ export class playerModel {
     this.velocityY = 0
     this.jumpAcceleration = 20
     this.gravity = - 5
+    this.obstacleOne
     setInterval(updatePhysics,100, this)
   }
 
   move(direction) {
-    console.log('position X: ',this.positionX)
-    console.log('position Y: ',this.positionY)
     if((direction === 'right') && playerNotAtRightEdge(this)){
       this.positionX += 1
     } else if((direction === 'left') && playerNotAtLeftEdge(this)){
       this.positionX -= 1
-    } else if((direction === 'up') && playerNotAtTopEdge(this)){
-       jump(this)
-    } else if((direction === 'down') && playerNotAtBottomEdge(this)){
-      this.positionY -= 1
-    }
+    } else if((direction === 'left') && positionX === 33) {
+      this.positionX
+    }else if((direction === 'up') && playerNotAtTopEdge(this)){
+     jump(this)
+   } else if((direction === 'down') && playerNotAtBottomEdge(this)){
+    this.positionY -= 1
   }
+}
 }
 
 function jump(player) {
@@ -33,6 +34,7 @@ function jump(player) {
 function updatePhysics(player) {
   player.positionY += player.velocityY
   player.positionX += player.velocityX
+  console.log(player.positionY)
   applyGravity(player)
 }
 
@@ -40,6 +42,7 @@ function applyGravity(player) {
   if(player.positionY < 0) {
     player.velocityY = 0
     player.positionY = 0
+    $('#minion').removeClass('bat').addClass('minion')
     return
   }
   player.velocityY += player.gravity
@@ -59,4 +62,8 @@ function playerNotAtTopEdge(player) {
 
 function playerNotAtBottomEdge(player) {
   return player.positionY >= 0
+}
+
+function obstacleOne(player) {
+  return player.positionX !== 33
 }

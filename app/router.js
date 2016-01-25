@@ -36,6 +36,7 @@ export class Router {
         switch(event.keyCode) {
           case up:
           that.controller.move('up')
+          $('#minion').removeClass('minion').addClass('bat')
           break;
         }
       })
