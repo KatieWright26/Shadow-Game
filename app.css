@@ -6,14 +6,16 @@
   position: relative;
 }
 
-/*.trees {
-  background-image: url('./images/background-2.png'); entire first layer to go here: ground, immediate background ct;
-  background-position: center center;
+.trees {
+  width: 1000px;
+  height: 250px;
+  background-image: url('./images/background-3.png'); entire first layer to go here: ground, immediate background ct;
+  background-position: 0% 0%;
   position: absolute;
   left: 195px;
   top: 70px;
-  z-index: -1;
-}*/
+  z-index: -2;
+}
 
 .background {
   width: 1000px;
@@ -24,7 +26,7 @@
   position: absolute;
   left: 195px;
   top: 70px;
-  z-index: -2;
+  z-index: -1;
 }
 
 .navigation {

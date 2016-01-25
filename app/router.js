@@ -11,17 +11,12 @@ export class Router {
     console.log("listening in the router")
     $(() => {
       $('body').keydown((event) => {
-        var up = 38
         var left = 37
         var right = 39
         var down =  40
 
         switch(event.keyCode)
         {
-          case up:
-          that.controller.move('up')
-          break;
-
           case down:
           that.controller.move('down')
           break;
@@ -32,6 +27,15 @@ export class Router {
 
           case right:
           that.controller.move('right')
+          break;
+        }
+      })
+      $('body').keyup((event) => {
+        var up = 38
+
+        switch(event.keyCode) {
+          case up:
+          that.controller.move('up')
           break;
         }
       })

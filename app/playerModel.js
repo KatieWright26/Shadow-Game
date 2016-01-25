@@ -5,7 +5,7 @@ export class playerModel {
     this.positionY = 0
     this.velocityX = 0
     this.velocityY = 0
-    this.jumpAcceleration = 13
+    this.jumpAcceleration = 20
     this.gravity = - 5
     setInterval(updatePhysics,100, this)
   }
@@ -27,6 +27,7 @@ export class playerModel {
 
 function jump(player) {
   player.velocityY += player.jumpAcceleration
+  // player.velocityX += player.jumpAcceleration / 10
 }
 
 function updatePhysics(player) {

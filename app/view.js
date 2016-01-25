@@ -8,6 +8,7 @@ export class View {
     }
       else {
           $('.background').css('background-position',`${playerModel.positionX - 46}% ${playerModel.positionY}%`)
+          $('.trees').css('background-position', `${playerModel.positionX - 46}% ${playerModel.positionY}%` )
     }
   }
 }
