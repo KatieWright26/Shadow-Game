@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "jspm bundle app/boot.js --inject",
-    "serve": "python -m SimpleHTTPServer 3000"
+    "serve": "python -m SimpleHTTPServer 3000",
   },
   "repository": {
     "type": "git",

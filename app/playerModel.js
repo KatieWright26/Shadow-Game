@@ -67,3 +67,41 @@ function playerNotAtBottomEdge(player) {
 function obstacleOne(player) {
   return player.positionX !== 33
 }
+
+platforms = [
+  {
+    x: 
+    y:
+    width:
+  },
+  {
+    x:
+    y:
+    width:
+  },
+  {
+    x:
+    y:
+    width:
+  },
+  {
+    x:
+    y:
+    width: 
+  },
+]
+
+makePixelsFromPlatform(platform) {
+  for(var i = platform.x; i < platform.x + platform.width; i++) {
+    arr.push(i, platform.y])
+  }
+}
+
+player = { x: playerModel.positionX, y: playerModel.positionY, width: 50}
+
+isColliding(player, box) {
+  
+}
+
+
+
