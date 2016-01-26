@@ -1,11 +1,11 @@
 export class playerModel {
   constructor() {
-    console.log(this)
     this.positionX = 0
     this.positionY = 0
     this.velocityX = 0
     this.velocityY = 0
-    this.jumpAcceleration = 20
+    this.jumpAccelerationY = 20
+    this.jumpAccelerationX = 10
     this.gravity = - 5
     this.obstacleOne
     setInterval(updatePhysics,100, this)
@@ -27,14 +27,13 @@ export class playerModel {
 }
 
 function jump(player) {
-  player.velocityY += player.jumpAcceleration
-  // player.velocityX += player.jumpAcceleration / 10
+  player.velocityY += player.jumpAccelerationY
+  player.velocityX += player.jumpAccelerationX
 }
 
 function updatePhysics(player) {
   player.positionY += player.velocityY
-  player.positionX += player.velocityX
-  console.log(player.positionY)
+  // player.positionX += player.velocityX
   applyGravity(player)
 }
 
@@ -46,6 +45,7 @@ function applyGravity(player) {
     return
   }
   player.velocityY += player.gravity
+  // player.velocityX += player.positionX
 }
 
 function playerNotAtRightEdge(player) {
@@ -67,40 +67,44 @@ function playerNotAtBottomEdge(player) {
 function obstacleOne(player) {
   return player.positionX !== 33
 }
-
-platforms = [
-  {
-    x: 
-    y:
-    width:
-  },
-  {
-    x:
-    y:
-    width:
-  },
-  {
-    x:
-    y:
-    width:
-  },
-  {
-    x:
-    y:
-    width: 
-  },
+// w = previous platform.w + platform.width + space between platforms
+var platforms = [
+{
+  x: 50,
+  y: 50,
+  width: 400
+},
+{
+  x: 600,
+  y: 150,
+  width: 250
+},
+{
+  x: 1050,
+  y: 300,
+  width: 500
+},
+{
+  x: 1300,
+  y: 475,
+  width: 200
+},
 ]
 
-makePixelsFromPlatform(platform) {
-  for(var i = platform.x; i < platform.x + platform.width; i++) {
-    arr.push(i, platform.y])
+function makePixelsFromPlatform(platform) {
+  var arr = []
+  for(var i = platform.x; i < (platform.x + platform.width); i++) {
+    arr.push([i, platform.y])
   }
+  return arr
 }
 
-player = { x: playerModel.positionX, y: playerModel.positionY, width: 50}
+var player = { x: playerModel.positionX, y: playerModel.positionY, width: 50}
 
-isColliding(player, box) {
-  
+function isColliding(player, platform) {
+  if((player.x + player.width is equal to platform.x + platform.width) {
+    return true
+  }
 }
 
 
