@@ -14,7 +14,7 @@ export class playerModel {
     setInterval(updatePhysics,100, this)
   }
   buildMap(player) {
-   $('.viewWindow').append('<div data-x-position = 100 data-y-position = 50>')
+   $('.background').append('<div class="platform" data-x-position = 100 data-y-position = 50 data-width = 50>')
 }
   move(direction) {
       if((direction === 'right') && playerNotAtRightEdge(this)){
@@ -30,7 +30,6 @@ export class playerModel {
     }
   }
 
-// w = previous platform.w + platform.width + space between platforms
 // function makePixelsFromPlatform(platform) {
 //   var arr = []
 //   for(var i = platform.x; i < (platform.x + platform.width); i++) {
@@ -72,7 +71,7 @@ function applyGravity(player) {
 }
 
 function playerNotAtRightEdge(player) {
-  return player.positionX !== 147
+  return player.positionX !== 197
 }
 
 function playerNotAtLeftEdge(player) {
