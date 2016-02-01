@@ -13,16 +13,13 @@ export class playerModel {
 
     setInterval(updatePhysics,100, this)
   }
-  buildMap(player) {
-   $('.background').append('<div class="platform" data-x-position = 100 data-y-position = 50 data-width = 50>')
-}
+  
   move(direction) {
       if((direction === 'right') && playerNotAtRightEdge(this)){
         this.positionX += 1
+        setHorizontalFlip(true)
       } else if((direction === 'left') && playerNotAtLeftEdge(this)){
         this.positionX -= 1
-      } else if((direction === 'left') && positionX === 33) {
-        this.positionX
       }else if((direction === 'up') && playerNotAtTopEdge(this)){
        jump(this)
      } else if((direction === 'down') && playerNotAtBottomEdge(this)){
@@ -86,4 +83,4 @@ function playerNotAtBottomEdge(player) {
   return player.positionY >= 0
 }
 
-
+//while loop. setInterval on keydown, and clear interval on keyup

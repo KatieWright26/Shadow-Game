@@ -6,7 +6,7 @@ body {
   .viewWindow {
   width: 800px;
   height: 700px;
-   left: 195px;
+  left: 195px;
   top: 70px;
   position: absolute;
 }
@@ -59,9 +59,9 @@ body {
   height: 130px;
 }
 .platform {
-      background-color: red;
+    background-color: red;
     width: 80px;
     height: 80px;
     position: relative;
-    left: 0;
+    background-position: 0% 0%;
 }
