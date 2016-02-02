@@ -7,9 +7,6 @@ export class playerModel {
     this.jumpAccelerationY = 20
     this.jumpAccelerationX = 10
     this.gravity = - 5
-    this.player = { x: this.positionX, y: this.positionY, width: 50 }
-    this.platforms = [ {x: 50, y: 50, width: 150}, {x: 600, y: 150, width: 90},
-    { x: 650, y: 300, width: 50 }, { x: 1300, y: 475, width: 100} ]
 
     setInterval(updatePhysics,100, this)
   }
@@ -82,4 +79,3 @@ function playerNotAtBottomEdge(player) {
   return player.positionY >= 0
 }
 
-//while loop. setInterval on keydown, and clear interval on keyup

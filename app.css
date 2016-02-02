@@ -11,18 +11,17 @@ body {
   position: absolute;
   background-color: yellow;
 }
-/*
+
 .trees {
   width: 800px;
   height: 700px;
   background-image: url('./images/background-3.jpg');
-  background-position: 0% 0%;
   position: absolute;
   left: 0;
   top: 0;
   z-index: -3;
-  /* -webkit-filter: contrast(%) */;
-/*}*/
+}
+
 /*
 
 .background {
@@ -36,12 +35,6 @@ body {
   top: 0;
   z-index: -2;
 }*/
-
-.navigation {
-  width: 90px;
-  padding-top: 20px;
-  margin-left: 185px;
-}
 
 .player {
   position: absolute;
@@ -60,10 +53,28 @@ body {
   width: 70px;
   height: 130px;
 }
-.platform {
-    background-color: red;
-    width: 80px;
-    height: 80px;
+.platforms {
+    width: 3000px;
+    height: 700px;
     position: relative;
     background-position: 0% 0%;
 }
+
+.platform1, .platform2, .platform {
+  width: 100px;
+  height: 500px;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  }
+
+  .platform2 {
+  width: 130px;
+  height: 200px;
+  left: 20%;
+  }
+  .platform3 {
+  width: 90px;
+  height: 100px;
+  left: 80%;
+  }
