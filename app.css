@@ -9,8 +9,9 @@ body {
   left: 195px;
   top: 70px;
   position: absolute;
+  background-color: yellow;
 }
-
+/*
 .trees {
   width: 800px;
   height: 700px;
@@ -21,7 +22,8 @@ body {
   top: 0;
   z-index: -3;
   /* -webkit-filter: contrast(%) */;
-}
+/*}*/
+/*
 
 .background {
   width: 800px;
@@ -33,7 +35,7 @@ body {
   left: 0;
   top: 0;
   z-index: -2;
-}
+}*/
 
 .navigation {
   width: 90px;

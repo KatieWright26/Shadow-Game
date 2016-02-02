@@ -8,7 +8,7 @@ export class Controller {
     this.view = new View()
     this.platformModel = new platformModel()
     
-    setInterval(this.view.render, 100, this.playerModel, this.platformModel, this.view)
+    setInterval(this.view.render.bind(this.view), 100, this.playerModel, this.platformModel)
   }
   move(direction) {
     this.playerModel.move(direction)
