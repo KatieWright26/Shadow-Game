@@ -2,16 +2,16 @@ export class View {
   constructor() {
   }
   render(playerModel, platformModels) {
-    renderPlayer(playerModel)
-    renderBackground(playerModel)
-    renderPlatforms(platformModels)
+    this.renderPlayer(playerModel)
+    // this.renderBackground(playerModel)
+    this.renderPlatforms(platformModels)
   }
 
-  renderBackground(playerModel) {
+  // renderBackground(playerModel) {
 
-    $('.background').css('background-position',`${playerModel.positionX - 46}% ${playerModel.positionY}%`)
-    $('.trees').css('background-position', `${playerModel.positionX - 46}% ${playerModel.positionY}%` )
-  }
+  //   $('.background').css('background-position',`${playerModel.positionX - 46}% ${playerModel.positionY}%`)
+  //   $('.trees').css('background-position', `${playerModel.positionX - 46}% ${playerModel.positionY}%` )
+  // }
 
   renderPlayer(playerModel) {
    const playerMove = (playerModel.positionX < 46 || playerModel.positionX > 147)
@@ -22,6 +22,6 @@ export class View {
   }
 }
   renderPlatforms(platformModels) {
-    $('.platform').css('left',`${platformModels.positionX - 46}% ${playerModel.positionY}%`)
+    $('.platform').css('left',`${platformModels.positionX - 46}% ${platformModels.positionY}%`)
   }
 }

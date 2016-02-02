@@ -17,7 +17,6 @@ export class playerModel {
   move(direction) {
       if((direction === 'right') && playerNotAtRightEdge(this)){
         this.positionX += 1
-        setHorizontalFlip(true)
       } else if((direction === 'left') && playerNotAtLeftEdge(this)){
         this.positionX -= 1
       }else if((direction === 'up') && playerNotAtTopEdge(this)){
