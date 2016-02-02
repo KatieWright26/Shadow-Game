@@ -1,10 +1,10 @@
 export class View {
   constructor() {
   }
-  render(playerModel, platformModels) {
-    renderPlayer(playerModel)
-    renderBackground(playerModel)
-    renderPlatforms(platformModels)
+  render(playerModel, platformModels, context) {
+    context.renderPlayer(playerModel)
+    context.renderBackground(playerModel)
+    context.renderPlatforms(platformModels)
   }
 
   renderBackground(playerModel) {
@@ -22,6 +22,6 @@ export class View {
   }
 }
   renderPlatforms(platformModels) {
-    $('.platform').css('left',`${platformModels.positionX - 46}% ${playerModel.positionY}%`)
+    $('.platform').css('left',`${platformModels.positionX - 46}% ${platformModels.positionY}%`)
   }
 }

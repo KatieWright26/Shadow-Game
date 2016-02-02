@@ -1,5 +1,6 @@
 import {playerModel} from './playerModel.js'
 import {View} from './view.js'
+import {platformModel} from './platformModel'
 
 export class Controller {
   constructor() {
@@ -7,8 +8,7 @@ export class Controller {
     this.view = new View()
     this.platformModel = new platformModel()
     
-    this.playerModel.buildMap(this.playerModel)
-    setInterval(this.view.render, 100, this.playerModel)
+    setInterval(this.view.render, 100, this.playerModel, this.platformModel, this.view)
   }
   move(direction) {
     this.playerModel.move(direction)
